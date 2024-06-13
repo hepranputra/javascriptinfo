@@ -1,26 +1,8 @@
-// Output prime number from 2 to 10.
+let x = +prompt("Enter number (x):");
+let n = +prompt("Enter its power (n):");
+let result = pow(x, n);
+alert(`${x} to the power of ${n} is ${result}`);
 
-"use strict";
-
-let begin = 2;
-let end = 10;
-for (let n = begin; n <= end; n++) {
-    // If we succeed pass the test in for block below, the current
-    // number must be a prime number. So, divider variable is a
-    // holder place for that result.
-    let divider;
-
-    // Why start from 2? Because a prime number can't be evenly divided
-    // by anything except 1 and the prime number itself.
-    for (divider = 2; divider < n; divider++) {
-        if (n % divider == 0) {
-            break;
-        }
-    }
-
-    // Act to output the prime number.
-    // The current divider value is a prime number.
-    if (divider == n) {
-        console.log(n);
-    }
+function pow(x, n) {
+    return x ** n;
 }
