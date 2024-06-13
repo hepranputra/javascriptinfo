@@ -18,8 +18,6 @@ for (let n = begin; n <= end; n++) {
         }
     }
 
-    // Act to output the prime number.
-    // The current divider value is a prime number.
     if (divider == n) {
         console.log(n);
     }
