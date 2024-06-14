@@ -1,20 +1,20 @@
-showPrime(10);
+"use strict";
 
-function isPrime(n) {
-    for (let divider = 2; divider < n; divider++) {
-        if (n % divider == 0) {
-            return false;
-        }
+let age = 16; // take 16 as an example
+let welcome;
+
+if (age < 18) {
+    welcome = function() {
+        alert("Hello!");
     }
-    return true;
-}
-
-function showPrime(limit) {
-    for (let n = 2; n <= limit; n++) {
-        if (!isPrime(n)) {
-            continue;
-        }
-        console.log(n);
+} else {
+    
+    welcome = function() {
+        alert("Greetings!");
     }
 }
 
+// Here we're out of curly braces,
+// so we can not see Function Declarations made inside of them.
+
+welcome(); // Error: welcome is not defined
