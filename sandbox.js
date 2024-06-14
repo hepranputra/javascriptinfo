@@ -1,8 +1,20 @@
-let x = +prompt("Enter number (x):");
-let n = +prompt("Enter its power (n):");
-let result = pow(x, n);
-alert(`${x} to the power of ${n} is ${result}`);
+showPrime(10);
 
-function pow(x, n) {
-    return x ** n;
+function isPrime(n) {
+    for (let divider = 2; divider < n; divider++) {
+        if (n % divider == 0) {
+            return false;
+        }
+    }
+    return true;
 }
+
+function showPrime(limit) {
+    for (let n = 2; n <= limit; n++) {
+        if (!isPrime(n)) {
+            continue;
+        }
+        console.log(n);
+    }
+}
+
