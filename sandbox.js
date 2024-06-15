@@ -1,20 +1,17 @@
-"use strict";
-
-let age = 16; // take 16 as an example
-let welcome;
-
-if (age < 18) {
-    welcome = function() {
-        alert("Hello!");
+function pow(x, n) {
+    let result = 1;
+    for (let i = 0; i < n; i++) {
+        result *= x;
     }
-} else {
-    
-    welcome = function() {
-        alert("Greetings!");
-    }
+    return result;
 }
 
-// Here we're out of curly braces,
-// so we can not see Function Declarations made inside of them.
+let x = prompt("x?", "");
+let n = prompt("n?", "");
 
-welcome(); // Error: welcome is not defined
+if (n <= 0) {
+    alert(`Power ${n} is not supported, please enter 
+an integer number greater than zero`);
+} else {
+    alert(pow(x, n));
+}
