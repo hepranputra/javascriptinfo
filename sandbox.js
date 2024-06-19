@@ -1,16 +1,23 @@
-let menu = {
-    width: 200,
-    height: 300,
-    title: "My menu",
-}
+let ladder = {
+    step: 0,
+    up() {
+        this.step++;
+        return this;
+    },
+    down() {
+        this.step--;
+        return this;
+    },
+    showStep: function() {
+        alert(this.step);
+        return this;
+    },
+};
 
-multiplyNumeric(menu);
-console.log(menu);
-
-function multiplyNumeric(object) {
-    for (let key in object) {
-        if (typeof object[key] === "number") {
-            object[key] *= 2;
-        }
-    }
-}
+// ladder.up();
+// ladder.up();
+// ladder.down();
+// ladder.showStep(); // 1
+// ladder.down();
+// ladder.showStep(); // 0
+ladder.up().up().down().showStep().down().showStep();
