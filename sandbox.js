@@ -1,10 +1,21 @@
-let map = new Map();
+let salaries = {
+  "John": 100,
+  "Pete": 300,
+  "Mary": 2500,
+};
 
-map.set('name', 'john');
+function topSalary(salaries) {
+    let maxSalary = 0;
+    let maxName = null;
+    
+    for (let [name, salary] of Object.entries(salaries)) {
+        if (salary > maxSalary) {
+            maxSalary = salary;
+            maxName = name;
+        }
+    }
+    
+    return maxName;
+}
 
-// let keys = Array.from(map.keys());
-let keys = [...map.keys(), 'more'];
-
-console.log(keys);
-keys.push('more');
-console.log(keys);
+console.log(topSalary(salaries));
